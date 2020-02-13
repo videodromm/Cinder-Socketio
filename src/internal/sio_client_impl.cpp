@@ -278,8 +278,12 @@ namespace sio
     {
         if(ec || m_con.expired())
         {
-            if (ec != boost::asio::error::operation_aborted)
-                LOG("ping exit,con is expired?"<<m_con.expired()<<",ec:"<<ec.message()<<endl){};
+			if (ec != boost::asio::error::operation_aborted)
+#ifdef _WIN32
+				LOG("ping exit,con is expired?" << m_con.expired() << ",ec:" << ec.message() << endl);
+#else
+				LOG("ping exit,con is expired?" << m_con.expired() << ",ec:" << ec.message() << endl) {};
+#endif
             return;
         }
         packet p(packet::frame_ping);
@@ -493,7 +497,12 @@ namespace sio
             m_ping_timer.reset(new boost::asio::deadline_timer(m_client.get_io_service()));
             boost::system::error_code ec;
             m_ping_timer->expires_from_now(milliseconds(m_ping_interval), ec);
-            if(ec)LOG("ec:"<<ec.message()<<endl){};
+
+#ifdef _WIN32
+			if (ec)LOG("ec:" << ec.message() << endl);
+#else
+			if (ec)LOG("ec:" << ec.message() << endl) {};
+#endif
             m_ping_timer->async_wait(lib::bind(&client_impl::ping,this,lib::placeholders::_1));
             LOG("On handshake,sid:"<<m_sid<<",ping interval:"<<m_ping_interval<<",ping timeout"<<m_ping_timeout<<endl);
             return;

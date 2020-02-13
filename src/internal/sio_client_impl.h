@@ -1,13 +1,16 @@
 #ifndef SIO_CLIENT_IMPL_H
 #define SIO_CLIENT_IMPL_H
 
+
 #include <cstdint>
 #ifdef _WIN32
+
 #define _WEBSOCKETPP_CPP11_THREAD_
 #define BOOST_ALL_NO_LIB
-//#define _WEBSOCKETPP_CPP11_RANDOM_DEVICE_
+#define _WEBSOCKETPP_CPP11_RANDOM_DEVICE_
 #define _WEBSOCKETPP_NO_CPP11_FUNCTIONAL_
 #define INTIALIZER(__TYPE__)
+
 #else
 #define _WEBSOCKETPP_CPP11_STL_ 1
 #define INTIALIZER(__TYPE__) (__TYPE__)
@@ -30,7 +33,6 @@ typedef websocketpp::config::asio_tls_client client_config;
 typedef websocketpp::config::asio_client client_config;
 #endif //SIO_TLS
 #endif //DEBUG
-//#include <boost/asio/deadline_timer.hpp>
 #include <boost/asio/deadline_timer.hpp>
 
 #include <memory>
