@@ -107,8 +107,8 @@
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <ClCompile>
       <Optimization>Disabled</Optimization>
-      <AdditionalIncludeDirectories>..\include;"..\..\..\..\..\include";..\..\..\src;C:\dev\2019\Cinder\blocks\Cinder-Socketio\lib\websocketpp;C:\dev\2019\Cinder\blocks\Cinder-Socketio\lib\rapidjson\include;C:\dev\2019\Cinder\blocks\Cinder-Socketio\lib\asio\asio\include;..\..\..\..\..\include\asio</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>_WEBSOCKETPP_CPP11_TYPE_TRAITS_;ASIO_STANDALONE;_WEBSOCKETPP_CPP11_FUNCTIONAL_;ASIO_HAS_STD_ARRAY;WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\..\..\..\..\include;..\..\..\src;..\..\..\lib\websocketpp;..\..\..\lib\rapidjson\include;..\..\..\lib\asio\asio\include;..\..\..\..\..\include\asio</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WEBSOCKETPP_CPP11_RANDOM_DEVICE_;_WEBSOCKETPP_CPP11_TYPE_TRAITS_;ASIO_STANDALONE;_WEBSOCKETPP_CPP11_FUNCTIONAL_;ASIO_HAS_STD_ARRAY;WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
       <RuntimeLibrary>MultiThreadedDebug</RuntimeLibrary>
       <PrecompiledHeader />
@@ -161,13 +161,14 @@
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <ClCompile>
-      <AdditionalIncludeDirectories>..\include;"..\..\..\..\..\include";..\..\..\src;..\..\..\..\..\include\asio</AdditionalIncludeDirectories>
-      <PreprocessorDefinitions>WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <AdditionalIncludeDirectories>..\include;..\..\..\..\..\include;..\..\..\src;..\..\..\lib\websocketpp;..\..\..\lib\rapidjson\include;..\..\..\lib\asio\asio\include;..\..\..\..\..\include\asio</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>_WEBSOCKETPP_CPP11_RANDOM_DEVICE_;_WEBSOCKETPP_CPP11_TYPE_TRAITS_;ASIO_STANDALONE;_WEBSOCKETPP_CPP11_FUNCTIONAL_;ASIO_HAS_STD_ARRAY;WIN32;_WIN32_WINNT=0x0601;_WINDOWS;NOMINMAX;NDEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <RuntimeLibrary>MultiThreaded</RuntimeLibrary>
       <PrecompiledHeader />
       <WarningLevel>Level3</WarningLevel>
       <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
+      <LanguageStandard>stdcpp17</LanguageStandard>
     </ClCompile>
     <ProjectReference>
       <LinkLibraryDependencies>true</LinkLibraryDependencies>

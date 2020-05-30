@@ -5,8 +5,8 @@
 	id="com.sophiadigitalart.socketio"
 	author="Bruce Lane"
 	license="AGPL3.0"
-	summary="A wrapper for the library SocketIO"
-	version="0.7.0"
+	summary="A wrapper for the SocketIO library"
+	version="1.0.20200530"
 	library="https://github.com/videodromm/Cinder-SocketIO"
 	url="https://github.com/videodromm/Cinder-SocketIO"
 	>
@@ -19,8 +19,10 @@
  	
     	<includePath system="true">src</includePath>
     	<includePath cinder="true">include/asio</includePath>
-	
-	
+    	<includePath cinder="true">lib/websocketpp</includePath>
+    	<includePath cinder="true">lib/rapidjson/include</includePath>
+    	<includePath cinder="true">asio/asio/include</includePath>
+		
 	<platform os="msw">
 		<libraryPath>lib/msw</libraryPath>
 	</platform>
