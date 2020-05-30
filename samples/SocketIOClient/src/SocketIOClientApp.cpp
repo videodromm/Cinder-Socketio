@@ -2,6 +2,7 @@
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
 #include "sio_client.h"
+
 using namespace ci;
 using namespace ci::app;
 using namespace std;
@@ -12,19 +13,15 @@ class SocketIOClientApp : public App {
 	void mouseDown( MouseEvent event ) override;
 	void update() override;
 	void draw() override;
-	sio::client h;
+	sio::client io;
 };
 
 void SocketIOClientApp::setup()
 {
-	h.connect("http://127.0.0.1:3000");
-	// emit event name only:
-	h.socket()->emit("test_text");
-	string s = "mon_message";
+	io.connect("http://127.0.0.1:3000");
+	string s = "Yo Socket.io";
 	// emit text
-	h.socket()->emit("test_text", sio::string_message::create(s));
-	
-	
+	io.socket()->emit("test_text", sio::string_message::create(s));		
 }
 
 void SocketIOClientApp::mouseDown( MouseEvent event )

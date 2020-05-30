@@ -1,0 +1,13 @@
+{
+  "name": "echo_server",
+  "author": "Melo Yao",
+  "version": "1.0.20200530",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node ./index.js"
+  },
+  "dependencies": {
+    "socket.io": "1.*"
+  }
+}
