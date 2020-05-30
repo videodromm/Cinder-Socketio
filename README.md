@@ -16,4 +16,4 @@ npm start
 Build with Visual Studio 2019:
 Choose ISO C++17
 Add preprocessor: _WEBSOCKETPP_CPP11_RANDOM_DEVICE_;_WEBSOCKETPP_CPP11_TYPE_TRAITS_;ASIO_STANDALONE;_WEBSOCKETPP_CPP11_FUNCTIONAL_;ASIO_HAS_STD_ARRAY;
-
+or add in Cinder/blocks/__AppTemplates/__Foundation\vc2019\foundation.vcxproj
