@@ -1,13 +1,15 @@
 #include "cinder/app/App.h"
 #include "cinder/app/RendererGl.h"
 #include "cinder/gl/gl.h"
+
+// SocketIO
 #include "sio_client.h"
 
 using namespace ci;
 using namespace ci::app;
 using namespace std;
 
-class SocketIOClientApp : public App {
+class _TBOX_PREFIX_App : public App {
   public:
 	void setup() override;
 	void update() override;
@@ -16,21 +18,20 @@ class SocketIOClientApp : public App {
 	sio::client io;
 };
 
-void SocketIOClientApp::setup()
+void _TBOX_PREFIX_App::setup()
 {
 	io.connect("http://127.0.0.1:3000");
 	string s = "Yo Socket.io";
 	// emit text
 	io.socket()->emit("test_text", sio::string_message::create(s));		
 }
-
-void SocketIOClientApp::update()
+void _TBOX_PREFIX_App::update()
 {
 }
 
-void SocketIOClientApp::draw()
+void _TBOX_PREFIX_App::draw()
 {
-	gl::clear( Color( 0, 0, 0 ) ); 
+	gl::clear(Color::black());
 }
 
-CINDER_APP( SocketIOClientApp, RendererGl )
+CINDER_APP(_TBOX_PREFIX_App, RendererGl)

@@ -12,19 +12,20 @@
 	>
 	<supports os="macosx" />
 	<supports os="msw" />
+
+	<includePath>lib/rapidjson/include</includePath>
+	<includePath>asio/asio/include</includePath>
+	<includePath>lib/websocketpp</includePath>
+	<includePath system="true">src</includePath>
+	<includePath cinder="true">include/asio</includePath>
 	
 	<sourcePattern>src/*.cpp</sourcePattern>
-    	<headerPattern>src/*.h</headerPattern>
-    	<headerPattern>src/*.hpp</headerPattern>
+	<headerPattern>src/*.h</headerPattern>
+	<headerPattern>src/*.hpp</headerPattern>
  	
-    	<includePath system="true">src</includePath>
-    	<includePath cinder="true">include/asio</includePath>
-    	<includePath cinder="true">lib/websocketpp</includePath>
-    	<includePath cinder="true">lib/rapidjson/include</includePath>
-    	<includePath cinder="true">asio/asio/include</includePath>
-		
 	<platform os="msw">
 		<libraryPath>lib/msw</libraryPath>
 	</platform>
 </block>
+<template>templates/SocketIO/template.xml</template>
 </cinder>
