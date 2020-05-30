@@ -1,11 +1,17 @@
 Cinder-Socketio
 
-Cinder implementation of Socketio.
+Cinder implementation of Socket.IO
 
 http://www.libcinder.org
 
 Based on https://github.com/kusharami/socket.io-client-cpp
 Using websocketpp from https://github.com/zaphoyd/websocketpp
+
+nodejs test server in the echo_server folder, run 
+```
+npm i
+npm start
+```
 
 Build with Visual Studio 2019:
 Choose ISO C++17
