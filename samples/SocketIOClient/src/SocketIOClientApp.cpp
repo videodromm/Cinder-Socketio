@@ -26,6 +26,10 @@ void SocketIOClientApp::setup()
 
 void SocketIOClientApp::update()
 {
+	io.socket()->on("received", [&](sio::event& ev) {
+		sio::message::ptr msg = ev.get_message();
+		std::string str = msg->get_string();
+	});
 }
 
 void SocketIOClientApp::draw()

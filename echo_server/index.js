@@ -9,11 +9,12 @@ io.on("connection", function(socket){
     socket.on('test_text',function(msg)
     {
         console.log("test text event received. --> ", msg);
+        socket.emit('received', msg, socket.id)
     });
 
     socket.on('test_binary',function()
     {
-       var args =Array.prototype.slice.call(arguments);
+      var args =Array.prototype.slice.call(arguments);
       if(args[0] instanceof Buffer)
       {
         console.log("test binary event received,binary length:"+ args[0].length);
@@ -22,7 +23,7 @@ io.on("connection", function(socket){
 
     socket.on('test ack',function()
     {
-       var args =Array.prototype.slice.call(arguments);
+      var args =Array.prototype.slice.call(arguments);
       if('object' == typeof args[0])
       {
         console.log("test combo received,object:");
